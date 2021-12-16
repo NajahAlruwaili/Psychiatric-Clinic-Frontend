@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Video.css"
+import { GrBasket } from "react-icons/gr";
+import { BsFillHeartFill } from "react-icons/bs";
+
+
 
 
 export default function Video() {
@@ -40,37 +45,46 @@ export default function Video() {
         setVideo(copiedArr);
       }
 
+      const fav = async (id) => {
+        try {
+          const result = await axios.post(
+            `http://localhost:5000/favorite/${id}`,
+            {},
+          );
+        } catch (error) {
+          console.log(error.response.data);
+        }
+      };
+
     return (
         <>
+        <div className="addingV">
+        <input className="inp1" onChange={(e)=> {changeDescVal(e)}}placeholder="describtion" />{" "}
+        <input className="inp1" onChange={(e)=> {changeVideo(e)}} placeholder="video"/>
+
+        <button className="but1" onClick={()=> {addVideo()}}>add video </button>
+        </div>
         <div className="Video">
        
           {Video.map((element, i) => {
               
             return (
   
-              <div className="Video" key={element._id}>
+              <div className="Vid" key={element._id}>
                 <p>description: {element.description}</p>
                 
-                {/* <video  width="100%" height="500px" controls autoplay > <source src={element.video} /> 
-                 </video> */}
-                 {/* <video src={element.video} width="320" height="240" controls ></video> */}
-                 <iframe width="420" height="315" src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
+                 <iframe id="n" width="420" height="315" src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
+                 <br></br>
 
-                <button onClick={()=>{deleteVideo(element._id, i)}}>delete</button>
+                <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/>
+                
+                <BsFillHeartFill className="HEART" onClick={() => {fav(element._id) }}/>
 
               </div>
             );
           })}
 
         </div>
-
-        <input onChange={(e)=> {changeDescVal(e)}}placeholder="describtion" />{" "}
-
-
-        <input onChange={(e)=> {changeVideo(e)}} placeholder="vid"/>
-
-        <button onClick={()=> {addVideo()}}>add vid </button>
-
 
       </>
     );

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
+import "./SignUp.css"
+
 
 export default function Login() {
 
@@ -41,13 +43,13 @@ export default function Login() {
   return (
 
 
-    <div className="login">
+    <div className="signUp">
 
-      <input onChange={(e)=> {changEmail(e)}} placeholder="enter your Email"/>
+      <input id="input2" onChange={(e)=> {changEmail(e)}} placeholder="enter your Email"/>
 
-      <input onChange={(e)=> {changePass(e)}} type="Password" placeholder="enter your Password"/>
+      <input id="input2" onChange={(e)=> {changePass(e)}} type="Password" placeholder="enter your Password"/>
 
-      <button onClick={()=> {checkLogin()}}> Login </button>
+      <button id="button2" onClick={()=> {checkLogin()}}><h2>Login</h2> </button>
 
     </div>
 

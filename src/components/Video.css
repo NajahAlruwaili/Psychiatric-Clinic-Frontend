@@ -1,0 +1,70 @@
+
+.Video p{
+    width: 550px;
+    height: 45px;
+    padding: 30px 8px 8px 8px ;
+    text-align: center;
+    margin: 8px 8px 0px 8px;
+
+}
+.addingV{
+    border-radius: 10px;
+    background-color: #7e8caa;
+    height: 150px;
+    width: 450px;
+    padding: 9px 9px 9px 9px;
+    margin: 40px auto;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px 5px #85878b;
+}
+.inp1{
+    height: 30px;
+    width: 200px;
+    font-size: large;
+    text-align: center;
+    margin: 52px 2px 12px 12px;
+}
+.but1{
+    height: 25px;
+    width: 80px;
+    border-radius: 9px;
+    margin: 6px 12px 12px 180px;
+
+    
+}
+.but1:hover{
+    font-size: 18px;
+}
+.Video{
+    display: grid;
+    grid-template-columns: 1fr 1fr ; 
+    margin: 12px 12px 12px 12px;
+
+}
+.Video #n{
+   
+    margin: 0px 8px 8px 89px;
+
+}
+
+.Video .button{
+   
+    margin: 0px 8px 8px 89px;
+
+}
+.Video .HEART{
+    margin: 0px 8px 8px 29px;
+    color: rgb(196, 194, 194);
+
+}
+.Video .button:hover{
+    font-size: 20px;
+
+}
+
+.Video .HEART:hover{
+   
+    font-size: 20px;
+    color: rgb(236, 11, 11);
+  
+}
