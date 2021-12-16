@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { GrBasket } from "react-icons/gr";
 import "./Post.css"
 
 export default function Post( ) {
-  const history = useHistory();
 
 
   const [post, setPost] = useState([]);
   const [NewPost, setNewPost] = useState("");
 ;
 
-  useEffect(async () => {
+  useEffect(async()=> {
     const res = await axios.get("http://localhost:5000/post");
     setPost(res.data);
   }, []);
@@ -30,7 +28,7 @@ export default function Post( ) {
           post: NewPost,
         });
 
-        const copied = [...post];
+      const copied = [...post];
       copied.push(result.data);
       setPost(copied);
     } catch (err) {

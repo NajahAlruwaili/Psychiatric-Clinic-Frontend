@@ -4,13 +4,10 @@ import axios from "axios";
 import "./SignUp.css"
 
 
-export default function Login() {
-
+export default function Login({ setToken }) {
   const [Email ,setEmail] = useState ("");
   const [Pass ,setPass] = useState ("");
-
   const history = useHistory();
-
 
 
 
@@ -31,13 +28,12 @@ export default function Login() {
         Email: Email,
         Pass: Pass,
       });
-      history.push("/video") 
+      setToken(response.data.token);
+      history.push("/video") ;
     } catch (error) {
-      console.log(error.response.data);
+    console.log(error);
     }
   };
-
-
 
 
   return (

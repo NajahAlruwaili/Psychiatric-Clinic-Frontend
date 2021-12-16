@@ -1,20 +1,18 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 
 
-export default function Navbar() {
+export default function Navbar({ token, setToken }) {
+  const history = useHistory();
 
 
     return (
       <div className="nav">
-        <h1>Happiness Life</h1>
-        <ul>
-          <li>
-            <Link className="link" to="/signUp">SignUp</Link>
-          </li>
-          <li>
-            <Link className="link" to="/login">Login</Link>
-          </li> 
+
+         <h1>Happiness Life</h1>
+
+        {token ? (
+        <ul> 
           <li>
             <Link className="link" to="/Video">Video</Link>
           </li>
@@ -27,9 +25,23 @@ export default function Navbar() {
           <li>
             <Link className="link" to="/favorite">favorite</Link>
           </li>
+          <li>
+            <Link className="link"  to="/login" onClick={()=>{setToken("");}}>
+              log out </Link>
+          </li>
           
           
         </ul>
+        ):(
+        <ul>
+          <li>
+            <Link className="link" to="/signUp">SignUp</Link>
+          </li>
+          <li>
+            <Link className="link" to="/login">Login</Link>
+          </li>
+        </ul>
+        ) }        
       </div>
     );
 }
