@@ -6,6 +6,7 @@
     text-align: center;
     margin: 8px 8px 0px 8px;
 
+
 }
 .addingV{
     border-radius: 10px;
@@ -16,6 +17,7 @@
     margin: 40px auto;
     border: 2px solid black;
     box-shadow: 5px 5px 5px 5px #85878b;
+
 }
 .inp1{
     height: 30px;
@@ -29,7 +31,6 @@
     width: 80px;
     border-radius: 9px;
     margin: 6px 12px 12px 180px;
-
     
 }
 .but1:hover{
@@ -39,6 +40,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr ; 
     margin: 12px 12px 12px 12px;
+    /* background-color: #7e8caa; */
 
 }
 .Video #n{
@@ -66,5 +68,16 @@
    
     font-size: 20px;
     color: rgb(236, 11, 11);
+  
+}
+.Video .HEART2{
+    margin: 0px 8px 8px 29px;
+    color: rgb(236, 11, 11);
+
+}
+.Video .HEART2:hover{
+   
+    font-size: 20px;
+    color: rgb(196, 194, 194);
   
 }

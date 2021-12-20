@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GrBasket } from "react-icons/gr";
+// import { BsFillHeartFill } from "react-icons/bs";
 import "./Post.css"
 
-export default function Post( ) {
+export default function Post({token}) {
 
 
   const [post, setPost] = useState([]);
@@ -11,7 +12,9 @@ export default function Post( ) {
 ;
 
   useEffect(async()=> {
-    const res = await axios.get("http://localhost:5000/post");
+    const res = await axios.get("http://localhost:5000/post",{
+      headers:{authorization:"Bearer " + token},
+    });
     setPost(res.data);
   }, []);
 
@@ -26,6 +29,8 @@ export default function Post( ) {
     try {
       const result = await axios.post("http://localhost:5000/post",{
           post: NewPost,
+        },{
+          headers:{authorization:"Bearer " + token},
         });
 
       const copied = [...post];
@@ -39,7 +44,9 @@ export default function Post( ) {
   const deletepost = async (id, index) => {
     try {
       const deletepost = await axios.delete(
-        `http://localhost:5000/post/${id}`,
+        `http://localhost:5000/post/${id}`,{
+          headers:{authorization:"Bearer " + token},
+        }
       );
       
       const copied = [...post];
@@ -50,6 +57,21 @@ export default function Post( ) {
     }
   };
 
+  // const favv = async (id) => {
+  //   try {
+  //     const resultt = await axios.post(
+  //       `http://localhost:5000/favor/${id}`,
+  //       {},
+  //       {
+  //         headers: { authorization: "Bearer " + token },
+  //       }
+  //     );
+  //     console.log(resultt.data);
+  //   } catch (error) {
+  //     console.log(error.response.data);
+  //   }
+  // };
+
 
 
   return (
@@ -57,9 +79,9 @@ export default function Post( ) {
     <div>
       
       <div className="adding">
-      <input className="inp" placeholder="Post Here ..." onChange={(e)=> {changePost(e);}}/>{" "}
+      <input className="inp" placeholder="... أكتب هنا" onChange={(e)=> {changePost(e);}}/>{" "}
       
-      <button className="but" onClick={()=> {addPost();}}> Submit </button>  
+      <button className="but" onClick={()=> {addPost();}}> ارسل </button>  
         </div> 
 
 
@@ -73,6 +95,8 @@ export default function Post( ) {
               <p className="chaild chaild1">{element.post}</p>
               
               <GrBasket className="chaild chaild2" onClick={() => {deletepost(element._id, i);}} /> 
+              {/* <BsFillHeartFill className=" chaild HEART" onClick={() => {favv(element._id) }}/> */}
+
 
             </div>
           );

@@ -14,31 +14,33 @@ export default function Navbar({ token, setToken }) {
         {token ? (
         <ul> 
           <li>
-            <Link className="link" to="/Video">Video</Link>
-          </li>
-          <li>
-            <Link className="link" to="/post">Post</Link>
-          </li>
-          <li>
-            <Link className="link" to="/Consultants">Consultants</Link>
-          </li>
-          <li>
-            <Link className="link" to="/favorite">favorite</Link>
-          </li>
-          <li>
             <Link className="link"  to="/login" onClick={()=>{setToken("");}}>
-              log out </Link>
+              تسجيل خروج </Link>
           </li>
-          
-          
+          <li>
+            <Link className="link" to="/chat">الرسائل</Link>
+          </li>
+          <li>
+            <Link className="link" to="/favorite">التفضيلات</Link>
+          </li>
+          <li>
+            <Link className="link" to="/post">طمنا عنك</Link>
+          </li>
+          <li>
+            <Link className="link" to="/Consultants">الأستشاريون</Link>
+          </li>
+          <li>
+            <Link className="link" to="/Video">فيديو تحفيزي</Link>
+          </li>
+        
         </ul>
         ):(
         <ul>
           <li>
-            <Link className="link" to="/signUp">SignUp</Link>
+            <Link className="link" to="/signUp">تسجيل جديد</Link>
           </li>
           <li>
-            <Link className="link" to="/login">Login</Link>
+            <Link className="link" to="/login">تسجيل دخول</Link>
           </li>
         </ul>
         ) }        

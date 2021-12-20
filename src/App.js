@@ -6,6 +6,7 @@ import Video from "./components/Video"
 import Post from "./components/Post"
 import Consultants from "./components/Consultants"
 import Favorite from "./components/Favorite"
+import Chat from "./components/Chat";
 import { Route } from "react-router";
 import"./Style.css"
 export default function App() {
@@ -22,6 +23,8 @@ export default function App() {
       <Route exact path="/Post" render={()=>{return <Post token={token}/>}} /> 
       <Route exact path="/Consultants" render={()=>{return <Consultants token={token}/>}} /> 
       <Route exact path="/favorite" render={()=>{return <Favorite token={token}/>}} /> 
+      <Route exact path="/Chat" render={()=>{return <Chat token={token}/>}} /> 
+
 
   
     </div>
