@@ -8,6 +8,7 @@ import Consultants from "./components/Consultants"
 import Favorite from "./components/Favorite"
 import Chat from "./components/Chat";
 import { Route } from "react-router";
+import Home from "./components/Home";
 import"./Style.css"
 export default function App() {
   const [token, setToken] = useState()
@@ -16,6 +17,8 @@ export default function App() {
   return (
     <div className="n">
       <Navbar token={token} setToken={setToken}/>
+      <Route exact path="/Home" element={<Home/>} /> 
+
       <Route exact path="/login" render={()=>{return <Login setToken={setToken}/>}} />
       <Route exact path="/signUp" component={SignUp} />
 

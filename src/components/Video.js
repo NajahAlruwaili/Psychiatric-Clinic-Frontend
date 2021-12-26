@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// import { useParams } from 'react-router-dom';
 import { GrBasket } from "react-icons/gr";
 import { BsFillHeartFill } from "react-icons/bs";
 import "./Video.css"
@@ -57,7 +58,7 @@ export default function Video({ token }) {
       
     
       const deleteVideo=async (id, index)=>{
-        console.log("its work");
+        // console.log("its work");
         try{
         const deletedVideo = await axios.delete(`http://localhost:5000/Video/${id}`,{
           headers:{authorization:"Bearer " + token},
@@ -65,9 +66,7 @@ export default function Video({ token }) {
         const copied= [...video];
         copied.splice(index,1);
         setVideo(copied);
-        console.log(deletedVideo.data);
 
-        // console.log(copied);
       }catch (err){
         console.log("err");
       }
@@ -87,6 +86,35 @@ export default function Video({ token }) {
           console.log(error.response.data);
         }
       };
+
+  //     const changeComment=(e)=>{
+  //       setInput(e.target.value)
+  //     }
+
+
+  //     const postCommint=async()=>{
+  //       try {
+  //         const result = await axios.post(
+  //             `http://localhost:5000/commint/${id}`,
+  //             { commint:input },
+  //             { headers: { authorization: "Bearer " + token } }
+  //           );
+  //           setVideo({...video , commint: result.data.commint})
+  //       } catch (err) {
+  //           console.log(err);
+  //       }
+  //   }
+
+  // const deletcommint =async (commint)=>{
+  //     try {
+  //         const result = await axios.put(`http://localhost:5000/commint/${id}`,
+  //     {commint:commint},
+  //     {headers: { authorization: "Bearer " + token }})
+  //     setVideo({...video , commint: result.data.commint})
+  //     } catch (err) {
+  //         console.log(err,"error");
+  //     }
+  // }
 
     return (
         <>

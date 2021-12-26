@@ -45,7 +45,7 @@ export default function Consultants({token}) {
         }
     }
 
-    const delConsultant = async (id, index) => {
+    const delConsultant = async (id,i) => {
         try {
           const deletepost = await axios.delete(
             `http://localhost:5000/consultant/${id}`,{
@@ -55,12 +55,15 @@ export default function Consultants({token}) {
         // تبع المحذوفات  idرجع لي ال 
         // ورجع لي ان 2 ارري والطول تبعها انه 2
           const copied = [...consultant];
-          copied.splice(index, 1);
+          copied.splice(i, 1);
           setConsultant(copied);
         } catch (err) {
           console.log("err");
         }
       };
+
+
+
 
       // const Chating= async ()=> {
       //   try {
@@ -75,9 +78,10 @@ export default function Consultants({token}) {
       //   }
       // };
 
+
+
       const GoToChat = (id) => {
         history.push(`/Chat/${id}`);
-        // console.log();
       };
 
 
@@ -111,7 +115,7 @@ export default function Consultants({token}) {
               return (
     
                 <div className="elemDiv" key={element._id}>
-                  <div className='imgg'><img src={element.img} alt='اضف صورة'/></div>
+                  <div className='imgg'><img className='img1' src={element.img} alt='اضف صورة'/></div>
                     
                     <p className="chaildC chaildC1"> {element.Name} </p>
                     <p className="chaildC chaildC1"> {element.specialty} </p>
@@ -119,7 +123,6 @@ export default function Consultants({token}) {
                   
                   <GrBasket className="chaildC chaildC2" onClick={()=>{delConsultant(element._id, i)}}/>
                   <button className="chaildC chaildC4" onClick={()=>{GoToChat()}}>استشارة </button>
-                  {/* <button onClick={()=>{GoChating()}}>chating</button> */}
 
   
                 </div>

@@ -9,6 +9,8 @@ export default function Post({token}) {
 
   const [post, setPost] = useState([]);
   const [NewPost, setNewPost] = useState("");
+  const [newPostss, setNewPostss] = useState("");
+
 ;
 
   useEffect(async()=> {
@@ -16,6 +18,7 @@ export default function Post({token}) {
       headers:{authorization:"Bearer " + token},
     });
     setPost(res.data);
+    // console.log(res.data);
   }, []);
 
 
@@ -43,12 +46,9 @@ export default function Post({token}) {
 
   const deletepost = async (id, index) => {
     try {
-      const deletepost = await axios.delete(
-        `http://localhost:5000/post/${id}`,{
+      const deletepost = await axios.delete( `http://localhost:5000/post/${id}`,{
           headers:{authorization:"Bearer " + token},
-        }
-      );
-      
+        });
       const copied = [...post];
       copied.splice(index, 1);
       setPost(copied);
@@ -56,6 +56,28 @@ export default function Post({token}) {
       console.log("err");
     }
   };
+
+
+  // حق الانبوت 
+  const changeePosts = (e) => {
+    setNewPostss(e.target.value);
+  };
+
+// فنكشن البوتون للتعديل   تطبع اذا سويت رفرش بي 
+  const updatePost= async (id)=>{
+    try {
+      const postUpdate = await axios.put(`http://localhost:5000/post/${id}`,{
+        post:newPostss,
+      },{
+        headers:{authorization:"Bearer " + token},
+      },
+      setPost(post.data)
+      );
+      console.log(post.data);
+    } catch (error) {
+      console.log("err");
+    }
+  }
 
   // const favv = async (id) => {
   //   try {
@@ -96,6 +118,8 @@ export default function Post({token}) {
               
               <GrBasket className="chaild chaild2" onClick={() => {deletepost(element._id, i);}} /> 
               {/* <BsFillHeartFill className=" chaild HEART" onClick={() => {favv(element._id) }}/> */}
+              <input onChange={(e)=>{changeePosts(e)}}></input>
+              <button onClick={()=>{updatePost(element._id)}}>تعديل</button>
 
 
             </div>

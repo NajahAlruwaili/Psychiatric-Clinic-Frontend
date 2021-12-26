@@ -25,21 +25,20 @@ export default function Favorite({token}) {
 
 
 
-            const deletFav=async (id, i)=>{
+    const deletFav=async (id, index)=>{
                 // console.log("its deleted fav");
-                try{
-                const result = await axios.delete(`http://localhost:5000/unfavor/${id}`,{
-                  headers:{authorization:"Bearer " + token},
-                });
-                const copied= [...favor];
-                copied.splice(i,1);
-                setFavor(copied);
-               
-              }catch (err){
-                // console.log(err.response.data);
-                console.log("err");
-              }
-              }
+      try{
+        const result = await axios.delete(`http://localhost:5000/unfavor/${id}`,{
+          headers:{authorization:"Bearer " + token},
+        });
+          const copied= [...favor];
+          copied.splice(index,1);
+          setFavor(copied);
+      }catch (err){
+        console.log("err");
+      }
+    };     
+  
 
 
     return (

@@ -9,7 +9,10 @@ export default function Navbar({ token, setToken }) {
     return (
       <div className="nav">
 
-         <h1>Happiness Life</h1>
+         <h1>"مرحباً بكم في "بــالانـــس</h1>
+        
+        
+         
 
         {token ? (
         <ul> 
@@ -36,6 +39,9 @@ export default function Navbar({ token, setToken }) {
         </ul>
         ):(
         <ul>
+          {/* <li>
+          <Link className="link"  to="/Home">Home</Link>
+          </li> */}
           <li>
             <Link className="link" to="/signUp">تسجيل جديد</Link>
           </li>
@@ -43,7 +49,11 @@ export default function Navbar({ token, setToken }) {
             <Link className="link" to="/login">تسجيل دخول</Link>
           </li>
         </ul>
-        ) }        
+        ) }   
+
+        {/* <div className='nnn'>
+          <img className='imgnn' src='https://ammannet.net/sites/default/files/styles/news_landing/public/2019-05/146339882400.jpg?itok=dlfV-gPM' width="490" height="450"/>
+          </div>      */}
       </div>
     );
 }

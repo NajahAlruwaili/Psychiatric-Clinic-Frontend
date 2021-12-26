@@ -2,25 +2,32 @@ import React, { useState, useEffect }  from 'react'
 import axios from 'axios';
 
 export default function Chat({ token }) {
-    const [consultants, setConsultants] = useState(null)
+    const [chats, setChats] = useState([])
+    const [sendCh, setSendCh] = useState("")
 
     useEffect(async(id) => {
         try {
-            const res = await axios.get(`http://localhost:5000/consultant${id}`,{
+            const res = await axios.get(`http://localhost:5000/Chat${id}`,{
                 headers: { authorization: "Bearer " + token },
               });
-            setConsultants(res.data);
-            console.log(res.data);
+              setChats(res.data);
+            // console.log(res.data);
         } catch (error) {
             console.log(error);
         }
     }, [])
+
+    // const sendCaht =(e)=>{
+    //     setSendCh(e.target.value);
+    // };
+
 
 
 
     
     return (
         <div>
+            {/* <input placeholder='chating' onChange={(e)=> {sendCaht(e);}}/>{" "} */}
             
             
         </div>

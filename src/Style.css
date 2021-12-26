@@ -8,7 +8,6 @@
 .nav{
     padding: 30px 42px 12px 42px;
     background-color: #7e8caa;
-    margin-bottom: 40px;
     height: 19vh;
     border-radius: 0px 0px 100px 100px;
     border-bottom:2px solid rgb(10, 10, 10);
@@ -16,6 +15,14 @@
 
 
 }
+/* .nnn{
+    margin-top: 40px;
+}
+.imgnn{
+    border-radius: 19px;
+    background-color: blue;
+    margin: 12px 12px 12px 30px;
+} */
 ul{
     display: flex;
     justify-content: space-around;
@@ -26,7 +33,7 @@ ul{
 h1{
     text-align: center;
     /* border:2px solid white; */
-    padding-right: 110px;
+    padding-right: 60px;
     margin-bottom: 15px;
     color: white;
     background-color: #7e8caa;
