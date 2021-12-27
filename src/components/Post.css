@@ -82,3 +82,20 @@
     color: red;
 }
 
+.about {
+    border-radius: 10px;
+    background-color: #7e8caa;
+    height: 350px;
+    width: 650px;
+    padding: 9px 9px 9px 9px;
+    margin: 40px auto;
+    border: 2px solid black;
+    font-size: x-large;
+    text-align: center;
+    box-shadow: 5px 5px 5px 5px #85878b;
+}
+.about p{
+    padding: 50px 9px 9px 9px;
+    background-color: #7e8caa;
+
+}

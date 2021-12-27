@@ -5,17 +5,17 @@ export default function Chat({ token }) {
     const [chats, setChats] = useState([])
     const [sendCh, setSendCh] = useState("")
 
-    useEffect(async(id) => {
-        try {
-            const res = await axios.get(`http://localhost:5000/Chat${id}`,{
-                headers: { authorization: "Bearer " + token },
-              });
-              setChats(res.data);
-            // console.log(res.data);
-        } catch (error) {
-            console.log(error);
-        }
-    }, [])
+    // useEffect(async(id) => {
+    //     try {
+    //         const res = await axios.get(`http://localhost:5000/Chat${id}`,{
+    //             headers: { authorization: "Bearer " + token },
+    //           });
+    //           setChats(res.data);
+    //         // console.log(res.data);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }, [])
 
     // const sendCaht =(e)=>{
     //     setSendCh(e.target.value);
@@ -28,7 +28,14 @@ export default function Chat({ token }) {
     return (
         <div>
             {/* <input placeholder='chating' onChange={(e)=> {sendCaht(e);}}/>{" "} */}
-            
+            <div>
+
+            <input placeholder='استشارتك'></input>
+            <input placeholder='الايميل'></input>
+            <input placeholder='الاسم:اختياري'></input>
+
+
+            </div>
             
         </div>
     )

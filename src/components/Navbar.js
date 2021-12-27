@@ -35,19 +35,23 @@ export default function Navbar({ token, setToken }) {
           <li>
             <Link className="link" to="/Video">فيديو تحفيزي</Link>
           </li>
-        
+         
         </ul>
         ):(
         <ul>
-          {/* <li>
-          <Link className="link"  to="/Home">Home</Link>
-          </li> */}
+          
           <li>
             <Link className="link" to="/signUp">تسجيل جديد</Link>
           </li>
+
+          <li>
+            <Link className="link" to="/AboutUs"> عن بــالانــس </Link>
+          </li>
+         
           <li>
             <Link className="link" to="/login">تسجيل دخول</Link>
           </li>
+          
         </ul>
         ) }   
 

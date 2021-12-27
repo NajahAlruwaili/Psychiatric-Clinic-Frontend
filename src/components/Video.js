@@ -6,7 +6,7 @@ import { BsFillHeartFill } from "react-icons/bs";
 import "./Video.css"
 
 
-export default function Video({ token }) {
+export default function Video({ token , admin}) {
 
     const [video, setVideo] = useState([]);
     const [description, setDescription] = useState("")
@@ -87,6 +87,8 @@ export default function Video({ token }) {
         }
       };
 
+      
+
   //     const changeComment=(e)=>{
   //       setInput(e.target.value)
   //     }
@@ -118,35 +120,68 @@ export default function Video({ token }) {
 
     return (
         <>
-        <div className="addingV">
+{/* <div className="addingV">
+       
+        </div> */}
+{admin==true?(  <div className="Video">
+  <div className="addingV" >
         <input className="inp1" onChange={(e)=> {changeDescVal(e)}}placeholder="الوصف" />{" "}
         <input className="inp1" onChange={(e)=> {changeVideo(e)}} placeholder="رابط الفيديو"/>
 
         <button className="but1" onClick={()=> {addVideo()}}> اضافة فيديو</button>
         </div>
-        <div className="Video">
-       
           {video.map((element, i) => {
               
             return (
   
               <div className="Vid" key={element._id}>
+                
+                <div>
                 <p> {element.description}</p>
-                
-                 <iframe id="n" width="420" height="315" src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
-                 <br></br>
-
-                <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/>
-                
-                <BsFillHeartFill className="HEART" onClick={() => {fav(element._id) }}/>
+                      
+                       <iframe id="n" width="420" height="315" src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
+                       <br></br>
+      
+                      <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/>
+                      
+                      <BsFillHeartFill className="HEART" onClick={() => {fav(element._id) }}/>
+                      
+              </div>
+        
                 
 
               </div>
             );
           })}
 
-        </div>
-        {/* <h2>{token}</h2> */}
+        </div> ):( <div className="Video">
+        
+        {video.map((element, i) => {
+            
+          return (
+
+            <div className="Vid" key={element._id}>
+              
+              <div>
+              <p> {element.description}</p>
+                    
+                     <iframe id="n" width="420" height="315" src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
+                     <br></br>
+    
+                    {/* <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/> */}
+                    
+                    <BsFillHeartFill className="HEART" onClick={() => {fav(element._id) }}/>
+                    
+            </div>
+      
+              
+
+            </div>
+          );
+        })}
+
+      </div> )}
+        
 
 
       </>

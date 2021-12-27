@@ -6,12 +6,10 @@ import "./Post.css"
 
 export default function Post({token}) {
 
-
   const [post, setPost] = useState([]);
   const [NewPost, setNewPost] = useState("");
   const [newPostss, setNewPostss] = useState("");
 
-;
 
   useEffect(async()=> {
     const res = await axios.get("http://localhost:5000/post",{
@@ -58,26 +56,26 @@ export default function Post({token}) {
   };
 
 
-  // حق الانبوت 
+  // حق انبوت التعديل 
   const changeePosts = (e) => {
     setNewPostss(e.target.value);
   };
-
-// فنكشن البوتون للتعديل   تطبع اذا سويت رفرش بي 
+  
+// فنكشن  للتعديل   تطبع اذا سويت رفرش بس 
   const updatePost= async (id)=>{
     try {
+      // console.log(id,"id");
       const postUpdate = await axios.put(`http://localhost:5000/post/${id}`,{
-        post:newPostss,
+        post:newPostss
       },{
         headers:{authorization:"Bearer " + token},
-      },
-      setPost(post.data)
-      );
-      console.log(post.data);
+      },);
+      setPost(postUpdate.data)
+      // console.log(postUpdate.data,"postUpdate");
     } catch (error) {
       console.log("err");
     }
-  }
+  };
 
   // const favv = async (id) => {
   //   try {
