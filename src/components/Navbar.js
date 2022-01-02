@@ -1,20 +1,36 @@
 import React from 'react'
 import { Link,useHistory } from "react-router-dom";
+import "../Style2.css"
+import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 
 export default function Navbar({ token, setToken }) {
   const history = useHistory();
 
+  let navLink = document.getElementById("navLink")
+  function showMnue () {
+    navLink.style.right = "0"
+  }
+  
+  function hideMnue () {
+    navLink.style.right = "-200px"
+  }
+
 
     return (
       <div className="nav">
 
-         <h1>"مرحباً بكم في "بــالانـــس</h1>
         
+         <img id="lo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVBUlthFW7iUXmASKBcvdni_K8mZ6CDYM4Ag&usqp=CAU"  />
+         <h3>بــالانـــس</h3>
         
-         
+         <div className="navL" id="navLink">
 
         {token ? (
+          <div>
+          <AiOutlineCloseCircle onClick={()=>{hideMnue()}} className='btn'/>
+
         <ul> 
           <li>
             <Link className="link"  to="/login" onClick={()=>{setToken("");}}>
@@ -35,29 +51,41 @@ export default function Navbar({ token, setToken }) {
           <li>
             <Link className="link" to="/Video">فيديو تحفيزي</Link>
           </li>
+          {/* <li>
+            <a href='/Home'>الرئيسية</a>
+          </li> */}
          
         </ul>
+        </div>
         ):(
-        <ul>
-          
-          <li>
-            <Link className="link" to="/signUp">تسجيل جديد</Link>
-          </li>
+          <div>
+          <AiOutlineCloseCircle onClick={()=>{hideMnue()}} className='btn'/>
+             <ul>
+               <li>
+                 <a href='/CallUs'> اتصل بنا </a>
+               </li>
+                <li>
+               <a href='/AboutUs'>عننا </a>
+              </li>
 
-          <li>
-            <Link className="link" to="/AboutUs"> عن بــالانــس </Link>
-          </li>
-         
-          <li>
-            <Link className="link" to="/login">تسجيل دخول</Link>
-          </li>
-          
-        </ul>
+               <li>
+                 <a href='/Home'>الرئيسية</a>
+               </li>
+             </ul>
+             <div className='helloBox'>
+        <h1>مـرحبــا بكــم فـي بــالانـــس</h1>
+        <a href='/login'>تسجيل دخول</a>
+        <a href='/signUp'>تسجيل جديد</a>
+          </div>
+           </div>
         ) }   
 
-        {/* <div className='nnn'>
-          <img className='imgnn' src='https://ammannet.net/sites/default/files/styles/news_landing/public/2019-05/146339882400.jpg?itok=dlfV-gPM' width="490" height="450"/>
-          </div>      */}
+        </div>
+            
+        <GiHamburgerMenu onClick={()=>{showMnue()}} className='btnM'/>
+
+          
+     
       </div>
     );
 }

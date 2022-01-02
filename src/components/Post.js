@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GrBasket } from "react-icons/gr";
-// import { BsFillHeartFill } from "react-icons/bs";
+import { FaRetweet } from "react-icons/fa";
 import "./Post.css"
 
 export default function Post({token}) {
@@ -61,7 +61,7 @@ export default function Post({token}) {
     setNewPostss(e.target.value);
   };
   
-// فنكشن  للتعديل   تطبع اذا سويت رفرش بس 
+// فنكشن  للتعديل   
   const updatePost= async (id)=>{
     try {
       // console.log(id,"id");
@@ -76,6 +76,10 @@ export default function Post({token}) {
       console.log("err");
     }
   };
+
+  const showUbdate = ()=>{
+
+  }
 
   // const favv = async (id) => {
   //   try {
@@ -96,11 +100,10 @@ export default function Post({token}) {
 
   return (
     
-    <div>
+    <div className="bigCont">
       
       <div className="adding">
       <input className="inp" placeholder="... أكتب هنا" onChange={(e)=> {changePost(e);}}/>{" "}
-      
       <button className="but" onClick={()=> {addPost();}}> ارسل </button>  
         </div> 
 
@@ -110,14 +113,25 @@ export default function Post({token}) {
 
           return (
 
-             <div id="map" key={element._id}> {" "}
+             <div className="postBox" key={element._id}> {" "}
              
-              <p className="chaild chaild1">{element.post}</p>
+              <p className="pst">{element.post}</p>
               
-              <GrBasket className="chaild chaild2" onClick={() => {deletepost(element._id, i);}} /> 
-              {/* <BsFillHeartFill className=" chaild HEART" onClick={() => {favv(element._id) }}/> */}
-              <input onChange={(e)=>{changeePosts(e)}}></input>
-              <button onClick={()=>{updatePost(element._id)}}>تعديل</button>
+
+              <div className="inpDiv">
+              <GrBasket className="delbtn" onClick={() => {deletepost(element._id, i);}} /> 
+              {/* <input onChange={(e)=>{changeePosts(e)}}></input>
+              <button onClick={()=>{updatePost(element._id)}}>تعديل</button> */}
+              <FaRetweet onClick={()=>{showUbdate()}}/>
+              {/* {token ? toggle ? "" : <FaRetweet  onClick={()=>{showUbdate(toggle)}}>ADD Post</FaRetweet> : ""} */}
+
+              </div>
+
+              {/* {forminput ? <form onSubmit={updateItem} className='d-flex justify-content-around mx-1 mt-1'>
+                                        <input className=' form-control border-none ' onChange={setValue} type="text"  />
+                                        <button className='rounded-1 p-1 fw-bold bg-danger text-light border-0'> change </button>
+                                    </form> : ''} */}
+
 
 
             </div>

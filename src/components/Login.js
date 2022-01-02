@@ -46,13 +46,21 @@ export default function Login({setAdmin, setToken }) {
 
 
     <div className="signUp">
+      <div className="signBox">
+       <div>
+         <input id="input2" onChange={(e)=> {changEmail(e)}} placeholder="enter your Email"/>
+       </div>
 
-      <input id="input2" onChange={(e)=> {changEmail(e)}} placeholder="enter your Email"/>
+        <div>
+          <input id="input2" onChange={(e)=> {changePass(e)}} type="Password" placeholder="enter your Password"/>
+        </div>
 
-      <input id="input2" onChange={(e)=> {changePass(e)}} type="Password" placeholder="enter your Password"/>
+        <div>
+          <button id="button2" onClick={()=> {checkLogin()}}><h2>Login</h2> </button>
+        </div>
 
-      <button id="button2" onClick={()=> {checkLogin()}}><h2>Login</h2> </button>
-
+      </div>
+      
     </div>
 
   );

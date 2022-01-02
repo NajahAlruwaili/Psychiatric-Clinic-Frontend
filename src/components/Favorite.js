@@ -44,8 +44,10 @@ export default function Favorite({token}) {
     return (
         <div>
 
+
             <div className="Video">
 
+          {/* <h1 className='nothing'> لايوجد لديك ماتفضله</h1> */}
             {favor.map((element, i) => {
               
             return (

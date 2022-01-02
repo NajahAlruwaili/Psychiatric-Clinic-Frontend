@@ -1,55 +1,41 @@
 .signUp{
-    border-radius: 30px;
-    display: inline-flex;
-    flex-direction: column;
-    height: 450px;
-    width: 450px;
-    background-color: #7e8caa;
-    align-content: center;
-    margin: 50px 50px 50px 400px;
-    border: 2px solid black;
-    box-shadow: 5px 5px 5px 5px #85878b;
+    min-height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-#input1{
-    
-     font-weight: 300;
-     margin: 50px 80px 0px 80px;
-     padding: 15px;
-     border-radius: 12px;
-     box-shadow: 5px 5px  #3a4458;
-}
-
-#button1{
-    width: 200px;
-    height: 40px;
-    margin: 30px 30px 20px 120px;
+.signBox{
+    background: #0f1422;
+    border-radius: 10px;
+    margin: 5%;
+    width: 50%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.664);
+    transition: 0.5s;
     text-align: center;
-    border-radius: 12px;
-    box-shadow: 5px 5px  #3a4458;
+    align-content: center;
 }
-
-#button1:hover{
-    color: rgba(18, 21, 216, 0.774);
+.signBox div {
+    margin: 5%;
 }
-#input2{
-    
-    font-weight: 300;
-    margin: 70px 80px 0px 80px;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 5px 5px  #3a4458;
+.signBox input{
+    width: 70%;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.815);
 }
-
-#button2{
-   width: 200px;
-   height: 40px;
-   margin: 70px 30px 20px 120px;
-   text-align: center;
-   border-radius: 12px;
-   box-shadow: 5px 5px  #3a4458;
+.signBox button{
+    height: 40px;
+    width: 130px;
+    border-radius: 10px;
 }
-
-#button2:hover{
-   color: rgba(18, 21, 216, 0.774);
+.signBox button:hover{
+    color: rgb(194, 46, 46);
+    box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.815);
 }

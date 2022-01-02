@@ -1,101 +1,118 @@
-.bigDiv{
-    margin: 50px auto;
-    width: 1000px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px 50px;
-    justify-content: space-around;
-    
-    
-    
-}
 .adding{
+   
+    border: 2px solid rgba(66, 70, 66, 0.712);
+    min-height: 20vh;
+    width: 30%;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0px #8b8786;
+    background-color: #bdb0aec0;
+    margin: 3% 30% 0 30%;
     border-radius: 10px;
-    background-color: #7e8caa;
-    height: 150px;
-    width: 450px;
-    padding: 9px 9px 9px 9px;
-    margin: 40px auto;
-    border: 2px solid black;
-    box-shadow: 5px 5px 5px 5px #85878b;
 
 }
-
-.inp{
-    height: 120px;
-    width: 440px;
-    background-color: #7e8caa;
-    border: 2px solid #7e8caa;
-    font-size: large;
+.adding input{
+    min-height: 20vh;
+    width: 80%;
+    transition: 0.5s;
     text-align: center;
-
-}
-.but{
-    margin: 6px auto;
-    height: 25px;
-    width: 80px;
-    border-radius: 9px;
-    box-shadow: 5px 5px  #3a4458;
-
-    
-}
-.but:hover{
-    font-size: 18px;
-}
-#map{
-    border-radius: 30px;
-    background-color: #7e8caa;
-    padding: 5px 5px 5px 5px;
-    margin: 8px 8px 8px 8px;
-    border: 2px solid black;
-    box-shadow: 5px 5px 5px 5px #85878b;
-
-}
-
-.chaild{
-    font-weight: bolder;
+    align-content: center;
+    border-radius: 10px;
+    margin: 5% 5% 0 5% ;
+    /* width: 50%; */
+    border: 2px solid #bdb0aec0;
+    background-color: #bdb0ae;
+    padding: 20px 12px;
     font-size: large;
+}
+.adding button{
+    padding: 10px 12px; 
+    min-height: 5vh;
+    border-radius: 10px;
+    width: 20%;
+    margin: 1% 40%;
+    font-size: medium;
+}
+
+
+.bigCont{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(250, 246, 246);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    align-content: center;
+    margin-top: 2%;
+    border: 2px solid rgba(249, 252, 252, 0);
+    font-size: large;
+    justify-content: space-between;
+}
+.bigDiv{
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 90%;
+    align-content: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: large;
+    border-radius: 10px;
+}
+
+.postBox{
+     border: 2px solid rgba(66, 70, 66, 0.712);
+     width: 25%;
+     height: 250px;
+     background-color: #bdb0aec0;
+     margin: 2%;
+     text-align: center;
+     padding: 32px 12px;
+    justify-content: space-between;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px 0px #8b8786;
+    align-content: center;
+    font-size: large;
+}
+.postBox p {
+    /* border:  2px solid rgb(255, 0, 234); */
+    height: 85%;
+    width: 90%;
+    margin: 2%;
+    font-size: large;
+    /* border: 2px solid rgb(17, 0, 255); */
+
+} 
+.inpDiv{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.inpDiv button{
+    height: 40px;
+    width: 55px;
+}
+.inpDiv input{
+    height: 35px;
+    margin: 1%;
     text-align: center;
-    background-color: #7e8caa;
-
+    border-radius: 10px;
+    text-align: center;
+    font-size: large;
 }
-
-.chaild1{
-    height: 210px;
-    width: 210px;
-    padding: 15px 15px 15px 15px;
-    margin: 8px 8px 8px 8px;
-}
-
-.chaild2{
-    height: 20px;
+.inpDiv .delbtn{
     width: 20px;
-    padding: 5px 5px 5px 5px;
-    margin: 4px 4px 4px 4px;
-}
-.HEART{
-    margin: 0px 8px 8px 29px;
-    color: rgb(196, 194, 194);
-}
-.HEART:hover{
-    font-size: 18px;
-    color: red;
-}
-
-.about {
+    height: 20px;
     border-radius: 10px;
-    background-color: #7e8caa;
-    height: 350px;
-    width: 650px;
-    padding: 9px 9px 9px 9px;
-    margin: 40px auto;
-    border: 2px solid black;
-    font-size: x-large;
-    text-align: center;
-    box-shadow: 5px 5px 5px 5px #85878b;
+    margin: 0 0 1% 2%;
 }
-.about p{
-    padding: 50px 9px 9px 9px;
-    background-color: #7e8caa;
-
+.inpDiv button:hover{
+    color: rgb(194, 46, 46);
+    box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.815);
+}
+.adding button:hover{
+    color: rgb(194, 46, 46);
+    box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.815);
 }

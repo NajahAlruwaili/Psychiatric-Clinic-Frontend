@@ -5,53 +5,33 @@
     grid-template-columns: 1fr  1fr;
     gap: 10px 50px;
     justify-content: space-around;
-    
-    
-    
-}
-.addingg{
-    border-radius: 10px;
-    background-color: #7e8caa;
-    height: 150px;
-    width: 450px;
-    padding: 9px 9px 9px 9px;
-    margin: 40px auto;
-    border: 2px solid black;
-    box-shadow: 5px 5px 5px 5px #85878b;
-
-}
-
-.inpC{
-    height: 30px;
-    width: 200px;
-    font-size: large;
+    /* transition: 0.5s;
     text-align: center;
-    margin: 8px;
-    border-radius: 9px;
-    box-shadow: 5px 5px  #3a4458;
-
+    align-content: center;
+    border-radius: 10px;    */
 }
-.butC{
-    height: 25px;
-    width: 130px;
-    font-size: large;
-    border-radius: 9px;
-    margin: 8px 8px 8px 152px;
-    box-shadow: 5px 5px  #3a4458;
 
-    
+.container{
+    background-color: #fff;
+    min-height: 100vh;
+    width: 100%;
 }
-/* .butC:hover{
-    font-size: 18px;
-} */
 
 .elemDiv{
     border-radius: 30px;
-    background-color: #7e8caa;
+    /* background-color: #7e8caa; */
+    background-color: #f8f0f094;
     padding: 5px 5px 5px 5px;
-    margin: 8px 8px 8px 8px;
+    margin: 6%;
     border: 2px solid black;
     box-shadow: 5px 5px 5px 5px #85878b;
+    height: 80%;
+    width: 70%;
+    transition: 0.5s;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+    /* border: 2px solid red; */
 }
 .imgg{
     border-radius: 50%;
@@ -66,7 +46,6 @@
     height: 90px;
     width: 90px;
 
-    /* border: 2px solid black; */
 }
 
 
@@ -74,7 +53,8 @@
     font-weight: bolder;
     font-size: large;
     text-align: center;
-    background-color: #7e8caa;
+    /* background-color: #7e8caa; */
+    /* border: 2px solid red; */
 
 }
 
@@ -90,7 +70,6 @@
     width: 20px;
     padding: 5px 5px 5px 5px;
     margin: 4px 4px 0px 4px;
-    /* border: 2px solid red; */
 }
 .chaildC3{
     height: 50px;

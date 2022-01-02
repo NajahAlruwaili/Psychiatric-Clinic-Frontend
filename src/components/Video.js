@@ -89,40 +89,12 @@ export default function Video({ token , admin}) {
 
       
 
-  //     const changeComment=(e)=>{
-  //       setInput(e.target.value)
-  //     }
-
-
-  //     const postCommint=async()=>{
-  //       try {
-  //         const result = await axios.post(
-  //             `http://localhost:5000/commint/${id}`,
-  //             { commint:input },
-  //             { headers: { authorization: "Bearer " + token } }
-  //           );
-  //           setVideo({...video , commint: result.data.commint})
-  //       } catch (err) {
-  //           console.log(err);
-  //       }
-  //   }
-
-  // const deletcommint =async (commint)=>{
-  //     try {
-  //         const result = await axios.put(`http://localhost:5000/commint/${id}`,
-  //     {commint:commint},
-  //     {headers: { authorization: "Bearer " + token }})
-  //     setVideo({...video , commint: result.data.commint})
-  //     } catch (err) {
-  //         console.log(err,"error");
-  //     }
-  // }
-
     return (
         <>
-{/* <div className="addingV">
+{/* <div className="biggBox">
        
         </div> */}
+        {/* {admin==true?():()} */}
 {admin==true?(  <div className="Video">
   <div className="addingV" >
         <input className="inp1" onChange={(e)=> {changeDescVal(e)}}placeholder="الوصف" />{" "}
@@ -136,10 +108,10 @@ export default function Video({ token , admin}) {
   
               <div className="Vid" key={element._id}>
                 
-                <div>
+                <div className="ggg" >
                 <p> {element.description}</p>
                       
-                       <iframe id="n" width="420" height="315" src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
+                       <iframe className="videoBox"  src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
                        <br></br>
       
                       <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/>
