@@ -1,8 +1,9 @@
 import React, { useState, useEffect }  from 'react'
 import axios from 'axios';
+import { GrBasket } from "react-icons/gr";
 import "./Chat.css"
 
-export default function Chat({ token }) {
+export default function Chat({ token, admin }) {
     const [chats, setChats] = useState([])
     const [Names, setNames] = useState("")
     const [EmailMsgs, setEmailMsgs] = useState("")
@@ -64,6 +65,19 @@ export default function Chat({ token }) {
         }
       };
 
+      const deletemsg = async (id, index) => {
+        try {
+          const deletepost = await axios.delete( `http://localhost:5000/Amasege/${id}`,{
+              headers:{authorization:"Bearer " + token},
+            });
+          const copied = [...chats];
+          copied.splice(index, 1);
+          setChats(copied);
+        } catch (err) {
+          console.log("err");
+        }
+      };
+
 
 
 
@@ -73,7 +87,31 @@ export default function Chat({ token }) {
             {/* <input placeholder='chating' onChange={(e)=> {sendCaht(e);}}/>{" "} */}
             
             <h1>تواصل معنا </h1>
-            <div className='masegs'>
+            
+          {admin==2?(<div className="bigDiv">
+            {chats.map((element, i) => {
+    
+              return (
+    
+                 <div className="msgggBox" key={element._id}> {" "}
+                 
+                  <p className="pst">الاسم:{element.Names}</p>
+                  <p className="pst">{element.EmailMsgs}:الايميل</p>
+                  <p className="pst">رقم الجوال:{element.PhoneMsgs}</p>
+                  <p className="pst">اسم الاستشاري:{element.DoctorNames}</p>
+                  <p className="pst">الموضوع:{element.Titles}</p>
+                  <p className="pst">الاستشارات:{element.MasgeIss}</p>
+
+                  {/* <button> حذف </button> */}
+                  <GrBasket className="delbtn" onClick={() => {deletemsg(element._id, i);}} />
+
+                  
+     
+                </div>
+              );
+            })}
+    
+           </div>):(<div className='masegs'>
 
                 <div className='top'>
                   <input onChange={(e)=>{doctorName (e)}} placeholder='اسم الاستشاري'></input>
@@ -94,7 +132,9 @@ export default function Chat({ token }) {
                <button onClick={()=>{sendMasgesss()}}> ارسال </button>
                </div>
  
-          </div>
+          </div>)}
+
+          
    
         </div>
     )

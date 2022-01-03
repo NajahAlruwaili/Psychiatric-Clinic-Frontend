@@ -11,6 +11,7 @@ import { Route } from "react-router";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs"
 import CallUs from './components/CallUs'
+// import OntvangerMsg from "./components/OntvangerMsg"
 import"./Style2.css"
 
 
@@ -24,7 +25,7 @@ export default function App() {
   return (
     <div className="n">
       {/* <section className="nn" ></section> */}
-      <Navbar token={token} setToken={setToken}/>
+      <Navbar token={token} setToken={setToken} admin={admin}/>
       <Route exact path="/Home" element={<Home/>} /> 
       {/* <Route exact path="/aboutUs" component={<AboutUs/>} />  */}
       <Route exact path="/AboutUs" render={()=>{return <AboutUs token={token}/>}}/>
@@ -38,7 +39,9 @@ export default function App() {
       <Route exact path="/Post" render={()=>{return <Post token={token}/>}} /> 
       <Route exact path="/Consultants" render={()=>{return <Consultants token={token}/>}} /> 
       <Route exact path="/favorite" render={()=>{return <Favorite token={token}/>}} /> 
-      <Route exact path="/Chat" render={()=>{return <Chat token={token}/>}} /> 
+      <Route exact path="/Chat" render={()=>{return <Chat token={token} admin={admin}/>}} /> 
+      {/* <Route exact path="/OntvangerMsg" render={()=>{return <OntvangerMsg token={token} />}} />  */}
+
 
 {/* <h1 className="hh">hi here</h1> */}
   

@@ -5,7 +5,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 
-export default function Navbar({ token, setToken }) {
+export default function Navbar({ token, setToken, admin }) {
   const history = useHistory();
 
   let navLink = document.getElementById("navLink")
@@ -36,6 +36,9 @@ export default function Navbar({ token, setToken }) {
             <Link className="link"  to="/login" onClick={()=>{setToken("");}}>
               تسجيل خروج </Link>
           </li>
+          {/* <li>
+            <Link className="link" to="/OntvangerMsg">الاستشارات  </Link>
+          </li> */}
           <li>
             <Link className="link" to="/chat">الرسائل</Link>
           </li>
@@ -51,9 +54,12 @@ export default function Navbar({ token, setToken }) {
           <li>
             <Link className="link" to="/Video">فيديو تحفيزي</Link>
           </li>
-          {/* <li>
-            <a href='/Home'>الرئيسية</a>
-          </li> */}
+           {/* {token && admin == 2 (<div><ul>
+<li>
+<Link className="link" to="/OntvangerMsg"> الاستشارات الواردة</Link>
+</li>
+</ul>
+</div>)} */}
          
         </ul>
         </div>

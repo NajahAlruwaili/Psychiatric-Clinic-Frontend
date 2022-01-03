@@ -20,19 +20,19 @@ export default function AboutUs() {
                 <div className='row'>
                     <div className='aboutContain'>
                         {/* <h2>Twitter</h2> */}
-                        <FaTwitterSquare className='butt tw'/><h4>@balansTw.ksa</h4>
+                        <a  href='https://twitter.com/najah_rul'><FaTwitterSquare className='butt tw'/><h4>@najah_rul</h4></a>
                     </div>
                     <div className='aboutContain'>
                         {/* <h2>Snapchat</h2> */}
-                        <FaSnapchatSquare className='butt sn'/><h4>@balansSn.ksa </h4>
+                        <a  href=' '><FaSnapchatSquare className='butt sn'/><h4>@balansSn.ksa </h4></a>
                     </div>
                     <div className='aboutContain'>
                         {/* <h2>Telegram</h2> */}
-                        <SiTelegram className='butt tel'/><h4>@balansTel.ksa </h4>
+                        <a  href='https://t.me/najah_rul'><SiTelegram className='butt tel'/><h4>@najah_rul </h4></a> 
                     </div>
                     <div className='aboutContain'>
                         {/* <h2>whatsApp</h2> */}
-                        <FaWhatsappSquare className='butt wh'/><h4> 0506179014 </h4>
+                        <a  href=' '><FaWhatsappSquare className='butt wh'/><h4> 0506179014 </h4></a>
                     </div>
                     
 

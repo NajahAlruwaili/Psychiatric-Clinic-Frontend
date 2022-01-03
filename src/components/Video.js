@@ -70,7 +70,7 @@ export default function Video({ token , admin}) {
       }catch (err){
         console.log("err");
       }
-      }
+      };
 
       const fav = async (id) => {
         try {
@@ -95,7 +95,7 @@ export default function Video({ token , admin}) {
        
         </div> */}
         {/* {admin==true?():()} */}
-{admin==true?(  <div className="Video">
+{admin==2?(  <div className="Video">
   <div className="addingV" >
         <input className="inp1" onChange={(e)=> {changeDescVal(e)}}placeholder="الوصف" />{" "}
         <input className="inp1" onChange={(e)=> {changeVideo(e)}} placeholder="رابط الفيديو"/>
