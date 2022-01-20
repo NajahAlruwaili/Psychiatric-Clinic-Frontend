@@ -11,6 +11,13 @@
 .bigMsg h1 {
     margin-top: 5%;
 }
+.bigMsg img {
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    position: center;
+}
 
 .masegs{
     margin: 2% 5%;
@@ -69,33 +76,42 @@
     box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.815);
 }
 .bidDiv{
-    display: inline-flex;
-    flex-wrap: wrap;
-    width: 90%;
-    /* align-content: center; */
-    margin-top: 5%;
-    margin-left: 5%;
-    font-size: large;
-    border-radius: 10px;
+    margin: 50px auto;
+    /* width: 85%; */
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    gap: 10px 50px;
+    justify-content: space-around;
 }
 .msgggBox{
-    /* border: 2px solid red; */
-    border: 2px solid rgba(66, 70, 66, 0.712);
-    width: 25%;
-    height: 250px;
-    background-color: #ffd8d2c0;
-    margin: 2%;
-    /* text-align: center; */
+    /* border: 2px solid rgba(66, 70, 66, 0.712); */
+    width: 320px;
+    height: 260px;
     padding: 32px 12px;
    justify-content: space-between;
    border-radius: 10px; 
-   box-shadow: 0 0 10px 0px #8b8786;
-   /* align-content: center; */
-   font-size: large;
+   box-shadow: 5px 5px 5px 5px #6f5679a1;
+   font-size: x-large;
 }
-.msgggBox p {
-    /* height: 85%;
-    width: 90%; */
-    margin: 2%;
+.pharagraph{
+    /* background-color: cadetblue; */
+    height: 240px;
+    width: 300px;
+    padding: 2%;
+}
+.delbtn{
+    /* background-color: cornflowerblue; */
+    margin: 10px;
+    color: red;
     font-size: large;
 }
+.delbtn:hover{
+    font-size: x-large;
+    color: royalblue;
+
+}
+/* .msgggBox p {
+   background-color: blueviolet;
+    margin: 2%;
+    font-size: large;
+} */

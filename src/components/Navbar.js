@@ -5,7 +5,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 
-export default function Navbar({ token, setToken, admin }) {
+export default function Navbar({ token, setToken }) {
   const history = useHistory();
 
   let navLink = document.getElementById("navLink")
@@ -19,7 +19,7 @@ export default function Navbar({ token, setToken, admin }) {
 
 
     return (
-      <div className="nav">
+      <div className="navB">
 
         
          <img id="lo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVBUlthFW7iUXmASKBcvdni_K8mZ6CDYM4Ag&usqp=CAU"  />
@@ -37,7 +37,7 @@ export default function Navbar({ token, setToken, admin }) {
               تسجيل خروج </Link>
           </li>
           {/* <li>
-            <Link className="link" to="/OntvangerMsg">الاستشارات  </Link>
+            <Link className="link" to="/account">اصوات</Link>
           </li> */}
           <li>
             <Link className="link" to="/chat">الرسائل</Link>
@@ -75,13 +75,13 @@ export default function Navbar({ token, setToken, admin }) {
               </li>
 
                <li>
-                 <a href='/Home'>الرئيسية</a>
+                 <a href='/'>الرئيسية</a>
                </li>
              </ul>
              <div className='helloBox'>
         <h1>مـرحبــا بكــم فـي بــالانـــس</h1>
         <a href='/login'>تسجيل دخول</a>
-        <a href='/signUp'>تسجيل جديد</a>
+        <a href='/signUp'> أنشاء حساب</a>
           </div>
            </div>
         ) }   

@@ -15,7 +15,7 @@ export default function Chat({ token, admin }) {
 
 
     useEffect(async()=> {
-      const res = await axios.get("http://localhost:5000/Amasege",{
+      const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Amasege`,{
         headers:{authorization:"Bearer " + token},
       });
       setChats(res.data);
@@ -49,7 +49,7 @@ export default function Chat({ token, admin }) {
         // console.log("its working");
         try {
           console.log("inter try");
-          const result = await axios.post("http://localhost:5000/Amasege",{
+          const result = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Amasege`,{
               Names: Names,EmailMsgs: EmailMsgs,
               PhoneMsgs: PhoneMsgs,DoctorNames: DoctorNames,
               Titles: Titles,MasgeIss: MasgeIss,
@@ -67,7 +67,7 @@ export default function Chat({ token, admin }) {
 
       const deletemsg = async (id, index) => {
         try {
-          const deletepost = await axios.delete( `http://localhost:5000/Amasege/${id}`,{
+          const deletepost = await axios.delete( `${process.env.REACT_APP_BACKEND_URL}/Amasege/${id}`,{
               headers:{authorization:"Bearer " + token},
             });
           const copied = [...chats];
@@ -84,9 +84,10 @@ export default function Chat({ token, admin }) {
     
     return (
         <div className='bigMsg'>
+          <img src="https://i.ibb.co/KVBmJR5/Whats-App-Image-2022-01-10-at-12-10-17-AM.jpg"/>
             {/* <input placeholder='chating' onChange={(e)=> {sendCaht(e);}}/>{" "} */}
             
-            <h1>تواصل معنا </h1>
+           
             
           {admin==2?(<div className="bigDiv">
             {chats.map((element, i) => {
@@ -94,24 +95,33 @@ export default function Chat({ token, admin }) {
               return (
     
                  <div className="msgggBox" key={element._id}> {" "}
-                 
+                 <div className='pharagraph'>
                   <p className="pst">الاسم:{element.Names}</p>
                   <p className="pst">{element.EmailMsgs}:الايميل</p>
                   <p className="pst">رقم الجوال:{element.PhoneMsgs}</p>
                   <p className="pst">اسم الاستشاري:{element.DoctorNames}</p>
                   <p className="pst">الموضوع:{element.Titles}</p>
-                  <p className="pst">الاستشارات:{element.MasgeIss}</p>
+                  <p className="pst">الاستشارات:{element.MasgeIss}</p> 
+                 </div>
+                  
 
                   {/* <button> حذف </button> */}
-                  <GrBasket className="delbtn" onClick={() => {deletemsg(element._id, i);}} />
+                  <div className="delbtn">
+                  <GrBasket  onClick={() => {deletemsg(element._id, i);}} />
+                  </div>
 
                   
-     
+                
                 </div>
+
+                 
               );
             })}
+            
     
-           </div>):(<div className='masegs'>
+           </div>
+           ):(
+           <div className='masegs'>
 
                 <div className='top'>
                   <input onChange={(e)=>{doctorName (e)}} placeholder='اسم الاستشاري'></input>
@@ -131,6 +141,7 @@ export default function Chat({ token, admin }) {
                <div className='nn'>
                <button onClick={()=>{sendMasgesss()}}> ارسال </button>
                </div>
+               <h1>ملاحظة: الرجاء التأكد من صحة البيانات المدخله حتى يتم التواصل معكم بشكل صحيح وسريع  </h1>
  
           </div>)}
 

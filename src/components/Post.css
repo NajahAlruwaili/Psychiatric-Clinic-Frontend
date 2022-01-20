@@ -1,130 +1,99 @@
-.adding{
-   
-    /* border: 2px solid rgba(66, 70, 66, 0.712); */
-    min-height: 20vh;
-    width: 30%;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px 0px #8b8786;
-    background-color: #fff4f2c0;
-    margin: 3% 30% 0 30%;
-    border-radius: 10px;
-
-}
-.adding input{
-    min-height: 20vh;
-    width: 80%;
-    transition: 0.5s;
-    text-align: center;
-    align-content: center;
-    border-radius: 10px;
-    margin: 5% 5% 0 5% ;
-    /* width: 50%; */
-    border: 2px solid #bdb0ae00;
-    background-color: #fff4f2c0;
-    padding: 20px 12px;
-    font-size: large;
-}
-.adding button{
-    padding: 10px 12px; 
-    min-height: 5vh;
-    border-radius: 10px;
-    width: 20%;
-    margin: 1% 40%;
-    font-size: x-large;
-    background-color: #fff4f2c0;
-    border: 2px solid rgba(0, 0, 0, 0.171);
-
-}
-
-
 .bigCont{
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(250, 246, 246);
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+.Cont .wwimg {
+    width: 100%;
+    height: 500px;
     background-position: center;
     background-size: cover;
-    position: relative;
+    position: center;
+}
+
+.minCont{
+    width: 90%;
+    margin: 4%;
+    text-align: center;
+    padding: 2%;
+    text-align: center; 
     align-content: center;
-    margin-top: 2%;
-    border: 2px solid rgba(249, 252, 252, 0);
-    font-size: large;
-    justify-content: space-between;
 }
 .bigDiv{
-    display: inline-flex;
-    flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     align-content: center;
-    margin-top: 5%;
-    margin-left: 5%;
-    font-size: large;
-    border-radius: 10px;
-}
-
-.postBox{
-     border: 2px solid rgba(66, 70, 66, 0);
-     width: 25%;
-     height: 250px;
-     background-color: #fff4f2c0;
-     margin: 2%;
-     text-align: center;
-     padding: 32px 12px;
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr ;
     justify-content: space-between;
-    border-radius: 10px; 
-    box-shadow: 0 0 10px 0px #8b8786;
+    padding: 2%;
+    margin-top: 5%;
+}
+.adding{
+    text-align: center; 
     align-content: center;
-    font-size: large;
+    /* border: 2px solid black; */
+    /* width: 350px; */
+    /* flex-wrap: nowrap;
+    display: flex; */
+}
+.postBox{
+    background-color: rgba(226, 227, 241, 0.315);
+    font-size: large;    
+    width: 330px;
+    height: 350px;
+    box-shadow: 5px 5px 5px 5px #6f5679a1;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 9%;
+    border-radius:  10px;
 }
 .postBox p {
-    /* border:  2px solid rgb(255, 0, 234); */
-    height: 85%;
-    width: 90%;
     margin: 2%;
-    font-size: large;
-    /* border: 2px solid rgb(17, 0, 255); */
-
-} 
-.inpDiv{
-    /* border: 2px solid red; */
-    width: 90%;
-    margin-top: 10%;
+    width: 290px;
+    height: 240px;
+    text-align: center;
+    padding: 10px;
+    align-content: center;
+}
+.postBox .inpDiv{
+    margin: 0 5% 0 5% ;
+    padding:  5% 9% 0  9%;
+    height: 50px;
     display: flex;
     justify-content: space-between;
-
-
 }
-.inpDiv button{
-    height: 40px;
-    width: 55px;
+
+.MdAddCircle{
+    width: 100px;
+    height: 100px;
+    color: rgb(51, 39, 73);
+    /* border: 2px solid red; */
 }
-.inpDiv input{
-    height: 35px;
-    margin: 1%;
-    text-align: center;
+.inp{
+    width: 300px;
+    height: 150px;
+    background-color: rgba(226, 227, 241, 0.315);
+    box-shadow: 5px 5px 5px 5px #6f5679a1;
     border-radius: 10px;
-    text-align: center;
-    font-size: large;
 }
-.inpDiv .delbtn{
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    margin: 0 0 1% 2%;
+.but{
+    width: 60px;
+    height: 30px; 
 }
-.inpDiv button:hover{
-    color: rgb(194, 46, 46);
-    box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.815);
-}
-.adding button:hover{
-    color: rgb(194, 46, 46);
-    box-shadow: 0 0 20px 0px rgba(241, 236, 236, 0.815);
-    background-color: rgb(250, 215, 210);
+
+@media(max-width: 800px){
+    .bigDiv{
+        margin: 20px auto;
+        width: 65%;
+        display: grid;
+        grid-template-columns:  1fr;
+        gap: 10px 50px;
+        justify-content: space-around;
+    }
 
 }
-.md{
-    align-content: center;
-    font-size: 80px;
-    color: rgb(129, 129, 163);
-    padding: 5%;
 
-}
+
+

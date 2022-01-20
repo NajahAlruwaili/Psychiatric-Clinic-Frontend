@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import { useParams } from 'react-router-dom';
-import { GrBasket } from "react-icons/gr";
+import { MdAddCircle } from "react-icons/md";
 import { BsFillHeartFill } from "react-icons/bs";
 import "./Video.css"
 
@@ -11,6 +11,8 @@ export default function Video({ token , admin}) {
     const [video, setVideo] = useState([]);
     const [description, setDescription] = useState("")
     const [vid, setVid] = useState("")
+    const [togleee, setTogleee] = useState(false);
+
 
     // console.log(token, "token");
 
@@ -18,7 +20,7 @@ export default function Video({ token , admin}) {
     useEffect(async () => {
       
         // console.log(token);
-         const res = await axios.get("http://localhost:5000/Video",{
+         const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Video`,{
            headers:{authorization:"Bearer " + token},
          });
          setVideo(res.data);
@@ -38,7 +40,7 @@ export default function Video({ token , admin}) {
       const addVideo=async ()=>{
         console.log("okkkkk");
         try{
-          const result = await axios.post("http://localhost:5000/Video", {
+          const result = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Video`, {
             description:description,
             video:vid,
           },
@@ -57,25 +59,24 @@ export default function Video({ token , admin}) {
 
       
     
-      const deleteVideo=async (id, index)=>{
-        // console.log("its work");
-        try{
-        const deletedVideo = await axios.delete(`http://localhost:5000/Video/${id}`,{
-          headers:{authorization:"Bearer " + token},
-        });
-        const copied= [...video];
-        copied.splice(index,1);
-        setVideo(copied);
+      // const deleteVideo=async (id, index)=>{
+      //   try{
+      //   const deletedVideo = await axios.delete(`http://localhost:5000/Video/${id}`,{
+      //     headers:{authorization:"Bearer " + token},
+      //   });
+      //   const copied= [...video];
+      //   copied.splice(index,1);
+      //   setVideo(copied);
 
-      }catch (err){
-        console.log("err");
-      }
-      };
+      // }catch (err){
+      //   console.log("err");
+      // }
+      // };
 
       const fav = async (id) => {
         try {
           const result = await axios.post(
-            `http://localhost:5000/favor/${id}`,
+            `${process.env.REACT_APP_BACKEND_URL}/favor/${id}`,
             {},
             {
               headers: { authorization: "Bearer " + token },
@@ -87,6 +88,10 @@ export default function Video({ token , admin}) {
         }
       };
 
+      const showAdd = ()=>{
+        setTogleee(true)
+      }
+
       
 
     return (
@@ -95,55 +100,44 @@ export default function Video({ token , admin}) {
        
         </div> */}
         {/* {admin==true?():()} */}
-{admin==2?(  <div className="Video">
-  <div className="addingV" >
+{admin==1?( <div className="Video">
+        
+        <img src="https://i.ibb.co/qFNdN9m/Whats-App-Image-2022-01-10-at-12-15-08-AM.jpg "/>
+
+        {togleee? (<div className="addingV" >
         <input className="inp1" onChange={(e)=> {changeDescVal(e)}}placeholder="الوصف" />{" "}
         <input className="inp1" onChange={(e)=> {changeVideo(e)}} placeholder="رابط الفيديو"/>
 
         <button className="but1" onClick={()=> {addVideo()}}> اضافة فيديو</button>
         </div>
-          {video.map((element, i) => {
-              
-            return (
-  
-              <div className="Vid" key={element._id}>
-                
-                <div className="ggg" >
-                <p> {element.description}</p>
-                      
-                       <iframe className="videoBox"  src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
-                       <br></br>
-      
-                      <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/>
-                      
-                      <BsFillHeartFill className="HEART" onClick={() => {fav(element._id) }}/>
-                      
-              </div>
         
-                
+      
+        ):(<div className="addingV">
+          <MdAddCircle className="MdAddCircle" onClick={()=>{showAdd()}}/></div>)}
 
-              </div>
-            );
-          })}
+         
+        <div className="Videoo">
 
-        </div> ):( <div className="Video">
+        
         
         {video.map((element, i) => {
             
           return (
 
-            <div className="Vid" key={element._id}>
+            <div  key={element._id}>
               
-              <div>
-              <p> {element.description}</p>
-                    
-                     <iframe id="n" width="420" height="315" src={`https://www.youtube.com/embed/${element.video}`} ></iframe>
-                     <br></br>
+            <div className="Vidd">
+              <p id="pp">  {element.description}</p>
+              <hr></hr>
+              <p><iframe id="n"  src={`https://www.youtube.com/embed/${element.video}`} ></iframe></p>
+              
     
                     {/* <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/> */}
                     
                     <BsFillHeartFill className="HEART" onClick={() => {fav(element._id) }}/>
                     
+
+
             </div>
       
               
@@ -152,7 +146,42 @@ export default function Video({ token , admin}) {
           );
         })}
 
-      </div> )}
+      </div> </div>
+  
+  
+  
+          ):( <div className="Video">
+        
+        <img src="https://i.ibb.co/qFNdN9m/Whats-App-Image-2022-01-10-at-12-15-08-AM.jpg "/>
+        <div className="Videoo">
+        
+        {video.map((element, i) => {
+            
+          return (
+
+            <div  key={element._id}>
+              
+            <div className="Vidd">
+              <p id="pp">  {element.description}</p>
+              <hr></hr>
+              <p><iframe id="n"  src={`https://www.youtube.com/embed/${element.video}`} ></iframe></p>
+              
+    
+                    {/* <GrBasket className="button" onClick={()=>{deleteVideo(element._id, i)}}/> */}
+                    
+                    <BsFillHeartFill className="HEART" onClick={() => {fav(element._id) }}/>
+                    
+
+
+            </div>
+      
+              
+
+            </div>
+          );
+        })}
+
+      </div> </div>)}
         
 
 
